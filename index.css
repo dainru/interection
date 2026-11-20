@@ -17,17 +17,23 @@ html {
     scroll-behavior: smooth;
 }
 
-h1, h2, h3, h4, p {
+h1,
+h2,
+h3,
+h4,
+p {
     margin: 0;
 }
 
 a {
-    color: inherit; /* 부모 요소의 글자색을 그대로 사용 */
+    color: inherit;
+    /* 부모 요소의 글자색을 그대로 사용 */
     text-decoration: none;
 }
 
 img {
-    display: block; /* 이미지 아래에 생기는 작은 빈틈 제거 */
+    display: block;
+    /* 이미지 아래에 생기는 작은 빈틈 제거 */
     width: 100%;
 }
 
@@ -187,7 +193,8 @@ main {
 .number-row img {
     width: 130px;
     height: 78px;
-    object-fit: cover; /* img 태그의 비율을 유지하며 지정한 상자 안에 채움 */
+    object-fit: cover;
+    /* img 태그의 비율을 유지하며 지정한 상자 안에 채움 */
 }
 
 /* [05] 장면 아카이브. 두 열의 너비와 오른쪽 여백으로 엇갈린 배치 구현 */
@@ -218,13 +225,15 @@ main {
 .archive-grid {
     display: flex;
     justify-content: space-between;
-    position: relative; /* absolute 장식 글자의 위치 기준 */
+    position: relative;
+    /* absolute 장식 글자의 위치 기준 */
 }
 
 .archive-column {
     width: 41%;
     position: relative;
-    z-index: 1; /* 장식 글자보다 사진과 설명이 위에 나타남 */
+    z-index: 1;
+    /* 장식 글자보다 사진과 설명이 위에 나타남 */
 }
 
 .right-column {
@@ -242,7 +251,8 @@ main {
     font-size: 125px;
     font-weight: 900;
     letter-spacing: -4px;
-    white-space: nowrap; /* 장식 글자가 자동으로 줄바꿈되지 않도록 설정 */
+    white-space: nowrap;
+    /* 장식 글자가 자동으로 줄바꿈되지 않도록 설정 */
     pointer-events: none;
 }
 
@@ -272,7 +282,8 @@ main {
 }
 
 .purple .scene-image img {
-    object-position: center 28%; /* 보라색 사진에서 얼굴과 상체가 보이도록 자르기 위치 조절 */
+    object-position: center 28%;
+    /* 보라색 사진에서 얼굴과 상체가 보이도록 자르기 위치 조절 */
 }
 
 .scene-image h3 {
@@ -303,7 +314,8 @@ main {
 .swatch {
     width: 28px;
     height: 34px;
-    flex-shrink: 0; /* 너비가 줄어도 색상 견본은 찌그러지지 않도록 설정 */
+    flex-shrink: 0;
+    /* 너비가 줄어도 색상 견본은 찌그러지지 않도록 설정 */
     background-color: #174552;
     border: 1px solid transparent;
 }
@@ -317,7 +329,8 @@ main {
     font-weight: 500;
 }
 
-.color-name span, .note-number {
+.color-name span,
+.note-number {
     font-family: "Cousine", monospace;
     font-size: 10px;
 }
@@ -334,7 +347,8 @@ main {
 /* 수업의 :hover는 마우스를 올렸을 때만 적용됩니다.
    부모 라벨에 마우스를 올리면 안쪽 견본의 테두리도 함께 변경합니다. */
 .film-label:hover .swatch {
-    border-color: currentColor; /* 현재 글자색과 같은 테두리색 */
+    border-color: currentColor;
+    /* 현재 글자색과 같은 테두리색 */
 }
 
 .film-label:hover {
@@ -345,19 +359,54 @@ main {
     background-color: #174552;
 }
 
-.emerald .film-label { border-color: #005c43; }
-.emerald .swatch, .emerald .film-label:hover { background-color: #005c43; }
-.purple .film-label { border-color: #605786; }
-.purple .swatch, .purple .film-label:hover { background-color: #605786; }
-.ivory .film-label { border-color: #e3e4d8; }
-.ivory .swatch, .ivory .film-label:hover { background-color: #e3e4d8; }
-.crimson .film-label { border-color: #b20d32; }
-.crimson .swatch, .crimson .film-label:hover { background-color: #b20d32; }
-.coral .film-label { border-color: #da6c56; }
-.coral .swatch, .coral .film-label:hover { background-color: #da6c56; }
+.emerald .film-label {
+    border-color: #005c43;
+}
+
+.emerald .swatch,
+.emerald .film-label:hover {
+    background-color: #005c43;
+}
+
+.purple .film-label {
+    border-color: #605786;
+}
+
+.purple .swatch,
+.purple .film-label:hover {
+    background-color: #605786;
+}
+
+.ivory .film-label {
+    border-color: #e3e4d8;
+}
+
+.ivory .swatch,
+.ivory .film-label:hover {
+    background-color: #e3e4d8;
+}
+
+.crimson .film-label {
+    border-color: #b20d32;
+}
+
+.crimson .swatch,
+.crimson .film-label:hover {
+    background-color: #b20d32;
+}
+
+.coral .film-label {
+    border-color: #da6c56;
+}
+
+.coral .swatch,
+.coral .film-label:hover {
+    background-color: #da6c56;
+}
 
 /* 밝은 색 위에서는 어두운 글자로 바꾸어 읽기 쉽게 처리 */
-.ivory .film-label:hover, .coral .film-label:hover {
+.ivory .film-label:hover,
+.coral .film-label:hover {
     color: #101310;
 }
 
@@ -421,10 +470,21 @@ main {
     transform: scale(1.03);
 }
 
-.emerald .study-photo img { border-color: #005c43; }
-.purple .study-photo img { border-color: #605786; }
-.ivory .study-photo img { border-color: #e3e4d8; }
-.crimson .study-photo img { border-color: #b20d32; }
+.emerald .study-photo img {
+    border-color: #005c43;
+}
+
+.purple .study-photo img {
+    border-color: #605786;
+}
+
+.ivory .study-photo img {
+    border-color: #e3e4d8;
+}
+
+.crimson .study-photo img {
+    border-color: #b20d32;
+}
 
 .study-photo p {
     margin-top: 16px;
@@ -434,7 +494,8 @@ main {
 
 .study-copy {
     flex: 1;
-    min-width: 0; /* 긴 리본 글자가 flex 영역을 밀어내지 않도록 처리 */
+    min-width: 0;
+    /* 긴 리본 글자가 flex 영역을 밀어내지 않도록 처리 */
 }
 
 .study-copy h3 {
@@ -446,7 +507,8 @@ main {
 }
 
 .ribbon {
-    overflow: hidden; /* 리본 상자 밖의 반복 영문만 가림 */
+    overflow: hidden;
+    /* 리본 상자 밖의 반복 영문만 가림 */
     background-color: #174552;
 }
 
@@ -458,10 +520,22 @@ main {
     white-space: nowrap;
 }
 
-.emerald .ribbon { background-color: #005c43; }
-.purple .ribbon { background-color: #605786; }
-.ivory .ribbon { background-color: #e3e4d8; color: #090e0a; }
-.crimson .ribbon { background-color: #b20d32; }
+.emerald .ribbon {
+    background-color: #005c43;
+}
+
+.purple .ribbon {
+    background-color: #605786;
+}
+
+.ivory .ribbon {
+    background-color: #e3e4d8;
+    color: #090e0a;
+}
+
+.crimson .ribbon {
+    background-color: #b20d32;
+}
 
 .study-copy p {
     margin-top: 16px;
@@ -481,7 +555,7 @@ main {
     font-weight: 400;
 }
 
-.color-index > p {
+.color-index>p {
     margin-top: 32px;
     font-size: 16px;
 }
@@ -513,10 +587,21 @@ main {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
 }
 
-.emerald .color-circle { background-color: #005c43; }
-.purple .color-circle { background-color: #605786; }
-.ivory .color-circle { background-color: #e3e4d8; }
-.crimson .color-circle { background-color: #b20d32; }
+.emerald .color-circle {
+    background-color: #005c43;
+}
+
+.purple .color-circle {
+    background-color: #605786;
+}
+
+.ivory .color-circle {
+    background-color: #e3e4d8;
+}
+
+.crimson .color-circle {
+    background-color: #b20d32;
+}
 
 .index-item h3 {
     font-size: 14px;
@@ -569,23 +654,35 @@ footer h2 {
     transform: translateY(-3px);
 }
 
-/* [12] 추가 애니메이션
-   :hover / transition은 확인한 수업 자료에 나온 문법입니다.
-   아래 @keyframes / animation은 해당 자료에서 직접 확인하지 못한 추가 문법입니다.
-   JavaScript 없이 시작·끝 상태와 재생 시간을 CSS로 지정합니다. */
+/* 표지와 탐색 링크의 애니메이션. @keyframes에 구간별 값을 적고
+   animation으로 재생 시간과 반복 횟수를 지정합니다. */
 
 /* opacity: 투명도, translateY: 위아래 이동. 제목 3줄이 차례로 나타남.
    backwards는 지연 시간에도 첫 상태를 적용하며, 재생 뒤에는 원래 상태로 돌아옵니다. */
-.cover-the, .cover-film, .cover-color {
-    animation: title-appear 0.9s ease-out backwards;
+.cover-the,
+.cover-film,
+.cover-color {
+    animation: fadeIn 0.9s ease-out backwards;
 }
 
-.cover-film { animation-delay: 0.15s; }
-.cover-color { animation-delay: 0.3s; }
+.cover-film {
+    animation-delay: 0.15s;
+}
 
-@keyframes title-appear {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+.cover-color {
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* 동일한 단어 묶음 2개를 이어 놓고 정확히 절반만 이동하면 끊김 없이 반복됩니다.
@@ -594,7 +691,7 @@ footer h2 {
 .ribbon-track {
     display: flex;
     width: max-content;
-    animation: ribbon-flow 30s linear infinite;
+    animation: ribbon-flow 25s linear infinite;
 }
 
 .ribbon-track span {
@@ -602,36 +699,81 @@ footer h2 {
     padding-right: 64px;
 }
 
-/* 단어를 자세히 읽을 수 있도록 리본 위에 마우스를 올리면 잠시 정지 */
-.ribbon:hover .ribbon-track {
-    animation-play-state: paused;
+
+< !-- 동일한 텍스트를 두 번 배치하여 애니메이션 반복 시 글자가 끊기지 않고 연속적으로 흐르도록 구현 -->@keyframes ribbon-flow {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
 }
 
-@keyframes ribbon-flow {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-}
-
-/* 숫자 소개 링크의 화살표도 작은 거리만 이동 */
+/* 화살표만 한 번 튀어 오릅니다. 링크를 가리키거나 Tab 키로 포커스하면 재생합니다. */
 .number-row strong span {
     display: inline-block;
-    transition: transform 0.3s ease;
 }
 
-a.number-row:hover strong span, a.number-row:focus-visible strong span {
-    transform: translate(4px, -4px);
+a.number-row:hover strong span,
+a.number-row:focus-visible strong span {
+    animation: bounce 0.65s ease-in-out;
+}
+
+@keyframes bounce {
+
+    0%,
+    55%,
+    100% {
+        transform: translateY(0);
+    }
+
+    30% {
+        transform: translateY(-7px);
+    }
+
+    75% {
+        transform: translateY(-2px);
+    }
+}
+
+/* 키보드로 이동할 때 현재 선택된 링크를 테두리로 표시합니다. */
+a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
 }
 
 /* 운영체제에서 움직임 줄이기를 선택한 경우 자동 재생과 움직임을 해제합니다.
    일반 화면 너비를 검사하는 @media와 같은 형태로 사용자 설정을 검사하는 보조 문법입니다. */
 @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    .cover-the, .cover-film, .cover-color, .ribbon-track { animation: none; }
-    .scene-image img, .film-label, .study-photo img, .color-circle,
-    .footer-links a, .number-row strong span { transition: none; }
-    .scene:hover .scene-image img, .film-label:hover, .study-photo:hover img,
-    .index-item:hover .color-circle, .footer-links a:hover,
-    a.number-row:hover strong span, a.number-row:focus-visible strong span { transform: none; }
+    html {
+        scroll-behavior: auto;
+    }
+
+    .cover-the,
+    .cover-film,
+    .cover-color,
+    .ribbon-track,
+    a.number-row:hover strong span,
+    a.number-row:focus-visible strong span {
+        animation: none;
+    }
+
+    .scene-image img,
+    .film-label,
+    .study-photo img,
+    .color-circle,
+    .footer-links a {
+        transition: none;
+    }
+
+    .scene:hover .scene-image img,
+    .film-label:hover,
+    .study-photo:hover img,
+    .index-item:hover .color-circle,
+    .footer-links a:hover {
+        transform: none;
+    }
 }
 
 .footer-info {
@@ -651,80 +793,327 @@ a.number-row:hover strong span, a.number-row:focus-visible strong span {
 
 /* [10] 태블릿. 수업 예시와 동일하게 @media 안에서 필요한 값만 덮어씁니다. */
 @media (min-width: 768px) and (max-width: 1023px) {
-    header nav { gap: 16px; }
-    .cover-film { font-size: 76px; }
-    .cover h1 { font-size: 70px; }
-    .archive-column { width: 45%; }
-    .scene-image { height: 300px; }
-    .scene-image h3 { font-size: 38px; }
-    .film-label { padding: 12px; gap: 10px; }
-    .note-number { font-size: 8px; }
-    .study-heading h2 { font-size: 80px; }
-    .study-photo { width: 175px; }
-    .study-photo img { height: 175px; }
-    .study-copy h3 { font-size: 28px; }
-    .study-copy p { font-size: 16px; }
-    .ribbon span { font-size: 76px; }
-    .index-list { gap: 16px; }
-    .color-circle { width: 115px; height: 115px; }
+    header nav {
+        gap: 16px;
+    }
+
+    .cover-film {
+        font-size: 76px;
+    }
+
+    .cover h1 {
+        font-size: 70px;
+    }
+
+    .archive-column {
+        width: 45%;
+    }
+
+    .scene-image {
+        height: 300px;
+    }
+
+    .scene-image h3 {
+        font-size: 38px;
+    }
+
+    .film-label {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .note-number {
+        font-size: 8px;
+    }
+
+    .study-heading h2 {
+        font-size: 80px;
+    }
+
+    .study-photo {
+        width: 175px;
+    }
+
+    .study-photo img {
+        height: 175px;
+    }
+
+    .study-copy h3 {
+        font-size: 28px;
+    }
+
+    .study-copy p {
+        font-size: 16px;
+    }
+
+    .ribbon span {
+        font-size: 76px;
+    }
+
+    .index-list {
+        gap: 16px;
+    }
+
+    .color-circle {
+        width: 115px;
+        height: 115px;
+    }
 }
 
 /* [11] 모바일. 2열을 1열로 바꾸고 글자와 여백을 축소합니다.
    왼쪽 열의 장면이 먼저 나오고 오른쪽 열의 장면이 이어집니다. */
 @media (max-width: 767px) {
-    header { display: block; min-height: 0; padding: 20px 6%; }
-    header nav { margin-top: 16px; gap: 16px; flex-wrap: wrap; }
-    header nav a { font-size: 11px; }
-    .cover { height: auto; min-height: 560px; padding: 30px 6%; }
-    .cover-intro { display: block; }
-    .cover-intro p { font-size: 12px; }
-    .cover-intro p + p { margin-top: 16px; }
-    .cover h1 { margin-top: 65px; font-size: 52px; letter-spacing: -2px; }
-    .cover-film { margin: 18px 0; font-size: 37px; letter-spacing: -2px; }
-    .cover-caption { margin-top: 45px; font-size: 9px; }
-    .about { padding: 55px 6%; }
-    .about h2 { font-size: 34px; }
-    .number-row { min-height: 110px; gap: 10px; }
-    .number-row h3 { width: 30%; font-size: 12px; }
-    .number-row strong { font-size: 48px; letter-spacing: -3px; }
-    .number-row strong span { font-size: 18px; margin-left: 4px; }
-    .number-row img { width: 70px; height: 48px; }
-    .archive { padding: 70px 6%; }
-    .section-heading { display: block; }
-    .archive h2 { font-size: 46px; }
-    .archive-guide { margin-top: 28px; }
-    .archive-guide p { font-size: 13px; }
-    .archive-grid { display: block; }
-    .archive-column { width: 100%; }
-    .right-column { padding-top: 0; margin-top: 55px; }
-    .archive-word { display: none; }
-    .scene { margin-bottom: 55px; }
-    .scene-image { height: 300px; }
-    .scene-image h3 { font-size: 40px; }
-    .film-label { padding: 12px; gap: 12px; }
-    .note-number { font-size: 8px; }
-    .scene-note { min-height: 0; font-size: 14px; }
-    .study { padding: 60px 6%; }
-    .study-heading { margin-bottom: 60px; }
-    .study-heading h2 { font-size: 44px; }
-    .study-heading p { font-size: 16px; }
-    .study-row { display: block; margin-bottom: 65px; }
-    .study-photo { width: 100%; margin-bottom: 24px; }
-    .study-photo img { width: 180px; height: 180px; margin: 0 auto; }
-    .study-copy h3 { font-size: 25px; }
-    .ribbon span { font-size: 68px; }
-    .study-copy p { font-size: 15px; }
-    .color-index { padding: 50px 6% 65px; }
-    .color-index h2 { font-size: 35px; letter-spacing: -1px; }
-    .color-index > p { font-size: 14px; }
-    .index-list { flex-wrap: wrap; justify-content: flex-start; gap: 30px 4%; }
-    .index-item { flex: none; width: 48%; }
-    .color-circle { width: 120px; height: 120px; }
-    .color-index .index-note { margin-top: 45px; font-size: 12px; }
-    footer { padding: 40px 6% 28px; }
-    footer h2 { font-size: 38px; letter-spacing: -2px; }
-    .footer-links { justify-content: flex-start; flex-wrap: wrap; gap: 10px; margin: 30px 0; }
-    .footer-links a { padding: 12px 16px; font-size: 11px; }
-    .footer-info { display: block; }
-    .footer-info p { margin-top: 20px; }
+    header {
+        display: block;
+        min-height: 0;
+        padding: 20px 6%;
+    }
+
+    header nav {
+        margin-top: 16px;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    header nav a {
+        font-size: 11px;
+    }
+
+    .cover {
+        height: auto;
+        min-height: 560px;
+        padding: 30px 6%;
+    }
+
+    .cover-intro {
+        display: block;
+    }
+
+    .cover-intro p {
+        font-size: 12px;
+    }
+
+    .cover-intro p+p {
+        margin-top: 16px;
+    }
+
+    .cover h1 {
+        margin-top: 65px;
+        font-size: 52px;
+        letter-spacing: -2px;
+    }
+
+    .cover-film {
+        margin: 18px 0;
+        font-size: clamp(28px, 9.5vw, 37px);
+        letter-spacing: -2px;
+    }
+
+    .cover-caption {
+        margin-top: 45px;
+        font-size: 9px;
+    }
+
+    .about {
+        padding: 55px 6%;
+    }
+
+    .about h2 {
+        font-size: 34px;
+    }
+
+    .number-row {
+        min-height: 110px;
+        gap: 10px;
+    }
+
+    .number-row h3 {
+        width: 30%;
+        font-size: 12px;
+    }
+
+    .number-row strong {
+        font-size: 48px;
+        letter-spacing: -3px;
+    }
+
+    .number-row strong span {
+        font-size: 18px;
+        margin-left: 4px;
+    }
+
+    .number-row img {
+        width: 70px;
+        height: 48px;
+    }
+
+    .archive {
+        padding: 70px 6%;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .archive h2 {
+        font-size: 46px;
+    }
+
+    .archive-guide {
+        margin-top: 28px;
+    }
+
+    .archive-guide p {
+        font-size: 13px;
+    }
+
+    .archive-grid {
+        display: block;
+    }
+
+    .archive-column {
+        width: 100%;
+    }
+
+    .right-column {
+        padding-top: 0;
+        margin-top: 55px;
+    }
+
+    .archive-word {
+        display: none;
+    }
+
+    .scene {
+        margin-bottom: 55px;
+    }
+
+    .scene-image {
+        height: 300px;
+    }
+
+    .scene-image h3 {
+        font-size: 40px;
+    }
+
+    .film-label {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .note-number {
+        font-size: 8px;
+    }
+
+    .scene-note {
+        min-height: 0;
+        font-size: 14px;
+    }
+
+    .study {
+        padding: 60px 6%;
+    }
+
+    .study-heading {
+        margin-bottom: 60px;
+    }
+
+    .study-heading h2 {
+        font-size: 44px;
+    }
+
+    .study-heading p {
+        font-size: 16px;
+    }
+
+    .study-row {
+        display: block;
+        margin-bottom: 65px;
+    }
+
+    .study-photo {
+        width: 100%;
+        margin-bottom: 24px;
+    }
+
+    .study-photo img {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto;
+    }
+
+    .study-copy h3 {
+        font-size: 25px;
+    }
+
+    .ribbon span {
+        font-size: 68px;
+    }
+
+    .study-copy p {
+        font-size: 15px;
+    }
+
+    .color-index {
+        padding: 50px 6% 65px;
+    }
+
+    .color-index h2 {
+        font-size: 35px;
+        letter-spacing: -1px;
+    }
+
+    .color-index>p {
+        font-size: 14px;
+    }
+
+    .index-list {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 30px 4%;
+    }
+
+    .index-item {
+        flex: none;
+        width: 48%;
+    }
+
+    .color-circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .color-index .index-note {
+        margin-top: 45px;
+        font-size: 12px;
+    }
+
+    footer {
+        padding: 40px 6% 28px;
+    }
+
+    footer h2 {
+        font-size: 38px;
+        letter-spacing: -2px;
+    }
+
+    .footer-links {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 30px 0;
+    }
+
+    .footer-links a {
+        padding: 12px 16px;
+        font-size: 11px;
+    }
+
+    .footer-info {
+        display: block;
+    }
+
+    .footer-info p {
+        margin-top: 20px;
+    }
 }
