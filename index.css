@@ -1,0 +1,730 @@
+/* [01] 공통 설정
+   수업 예시의 font-family, margin, padding, box-sizing 사용.
+   *는 모든 요소를 뜻하며 padding과 border가 너비 안에 포함되도록 설정합니다. */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #101310;
+    color: #f2eee4;
+    font-family: "DM Sans", "Noto Sans KR", sans-serif;
+}
+
+/* 페이지 내부 링크를 눌렀을 때 해당 위치로 부드럽게 이동 */
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, p {
+    margin: 0;
+}
+
+a {
+    color: inherit; /* 부모 요소의 글자색을 그대로 사용 */
+    text-decoration: none;
+}
+
+img {
+    display: block; /* 이미지 아래에 생기는 작은 빈틈 제거 */
+    width: 100%;
+}
+
+p {
+    font-family: "Noto Sans KR", sans-serif;
+    line-height: 1.7;
+    word-break: keep-all;
+}
+
+/* [02] 머리말: 수업 예시처럼 flex로 로고와 메뉴를 양끝에 배치 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100px;
+    padding: 24px 5%;
+    border-bottom: 1px solid #343b34;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+header nav {
+    display: flex;
+    gap: 24px;
+}
+
+header nav a {
+    font-size: 13px;
+    padding: 12px 0;
+    transition: color 0.2s;
+}
+
+header nav a:hover {
+    color: #e8b658;
+}
+
+main {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* [03] 표지 배경
+   linear-gradient와 사진을 겹쳐 글자가 잘 읽히도록 어두운 막을 만듭니다.
+   cover는 빈 공간 없이 채우며, 사진 일부가 잘릴 수 있습니다. */
+.cover {
+    height: 690px;
+    padding: 45px 5%;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("images/teal.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.cover-intro {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.cover-intro p {
+    font-size: 14px;
+}
+
+.cover h1 {
+    margin-top: 55px;
+    font-size: 84px;
+    font-weight: 900;
+    letter-spacing: -4px;
+    line-height: 1.1;
+}
+
+.cover h1 span {
+    display: block;
+}
+
+.cover-film {
+    margin: 15px 0;
+    text-align: center;
+    font-family: "Lora", Georgia, serif;
+    font-size: 100px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.cover-color {
+    text-align: right;
+}
+
+.cover-color strong {
+    color: #efbd5e;
+}
+
+.cover-caption {
+    margin-top: 40px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-align: right;
+}
+
+/* [04] 섹션 공통 제목: 제목과 안내를 가로로 나란히 배치 */
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.about {
+    padding: 76px 6%;
+    background-color: #f7f5ef;
+    color: #222a22;
+}
+
+.about h2 {
+    font-size: 44px;
+    line-height: 1.15;
+    letter-spacing: -2px;
+    font-weight: 900;
+}
+
+.number-row {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    min-height: 129px;
+    border-top: 1px solid #bfc8b8;
+}
+
+.number-row:last-child {
+    border-bottom: 1px solid #bfc8b8;
+}
+
+.number-row h3 {
+    width: 31%;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 14px;
+}
+
+.number-row strong {
+    flex: 1;
+    font-size: 76px;
+    font-weight: 400;
+    letter-spacing: -5px;
+}
+
+.number-row strong span {
+    margin-left: 8px;
+    font-size: 24px;
+    color: #506c48;
+}
+
+.number-row img {
+    width: 130px;
+    height: 78px;
+    object-fit: cover; /* img 태그의 비율을 유지하며 지정한 상자 안에 채움 */
+}
+
+/* [05] 장면 아카이브. 두 열의 너비와 오른쪽 여백으로 엇갈린 배치 구현 */
+.archive {
+    padding: 110px 5% 120px;
+}
+
+.archive h2 {
+    font-family: "Lora", Georgia, serif;
+    font-size: 58px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -3px;
+}
+
+.archive-guide span {
+    font-family: "Cousine", monospace;
+    font-size: 11px;
+}
+
+.archive-guide p {
+    margin-top: 16px;
+    font-size: 14px;
+    color: #c6cebf;
+}
+
+.archive-grid {
+    display: flex;
+    justify-content: space-between;
+    position: relative; /* absolute 장식 글자의 위치 기준 */
+}
+
+.archive-column {
+    width: 41%;
+    position: relative;
+    z-index: 1; /* 장식 글자보다 사진과 설명이 위에 나타남 */
+}
+
+.right-column {
+    padding-top: 120px;
+}
+
+.archive-word {
+    position: absolute;
+    top: 260px;
+    left: 47%;
+    width: 1420px;
+    transform: rotate(90deg);
+    transform-origin: left top;
+    color: #272d28;
+    font-size: 125px;
+    font-weight: 900;
+    letter-spacing: -4px;
+    white-space: nowrap; /* 장식 글자가 자동으로 줄바꿈되지 않도록 설정 */
+    pointer-events: none;
+}
+
+.scene {
+    margin-bottom: 90px;
+}
+
+.scene:last-child {
+    margin-bottom: 0;
+}
+
+.scene-image {
+    position: relative;
+    height: 366px;
+    overflow: hidden;
+}
+
+.scene-image img {
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* 사진과 라벨을 포함한 장면 카드에 마우스를 올리면 사진만 살짝 확대 */
+.scene:hover .scene-image img {
+    transform: scale(1.04);
+}
+
+.purple .scene-image img {
+    object-position: center 28%; /* 보라색 사진에서 얼굴과 상체가 보이도록 자르기 위치 조절 */
+}
+
+.scene-image h3 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
+
+/* [06] 필름 라벨: 색상 견본 + 이름/코드 + 기록 번호
+   설명을 펼치는 버튼이 아니므로 클릭 동작이나 JavaScript가 없습니다. */
+.film-label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 16px;
+    padding: 12px 16px;
+    min-height: 64px;
+    border: 1px solid #174552;
+    border-radius: 3px;
+    background-color: #101310;
+    transition: background-color 0.2s, color 0.2s, transform 0.3s;
+}
+
+.swatch {
+    width: 28px;
+    height: 34px;
+    flex-shrink: 0; /* 너비가 줄어도 색상 견본은 찌그러지지 않도록 설정 */
+    background-color: #174552;
+    border: 1px solid transparent;
+}
+
+.color-name {
+    flex: 1;
+}
+
+.color-name h4 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.color-name span, .note-number {
+    font-family: "Cousine", monospace;
+    font-size: 10px;
+}
+
+.color-name span {
+    display: block;
+    margin-top: 4px;
+}
+
+.note-number {
+    white-space: nowrap;
+}
+
+/* 수업의 :hover는 마우스를 올렸을 때만 적용됩니다.
+   부모 라벨에 마우스를 올리면 안쪽 견본의 테두리도 함께 변경합니다. */
+.film-label:hover .swatch {
+    border-color: currentColor; /* 현재 글자색과 같은 테두리색 */
+}
+
+.film-label:hover {
+    transform: translateY(-3px);
+}
+
+.teal .film-label:hover {
+    background-color: #174552;
+}
+
+.emerald .film-label { border-color: #005c43; }
+.emerald .swatch, .emerald .film-label:hover { background-color: #005c43; }
+.purple .film-label { border-color: #605786; }
+.purple .swatch, .purple .film-label:hover { background-color: #605786; }
+.ivory .film-label { border-color: #e3e4d8; }
+.ivory .swatch, .ivory .film-label:hover { background-color: #e3e4d8; }
+.crimson .film-label { border-color: #b20d32; }
+.crimson .swatch, .crimson .film-label:hover { background-color: #b20d32; }
+.coral .film-label { border-color: #da6c56; }
+.coral .swatch, .coral .film-label:hover { background-color: #da6c56; }
+
+/* 밝은 색 위에서는 어두운 글자로 바꾸어 읽기 쉽게 처리 */
+.ivory .film-label:hover, .coral .film-label:hover {
+    color: #101310;
+}
+
+.scene-note {
+    margin-top: 14px;
+    min-height: 70px;
+    color: #c6cebf;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* [07] 색 분석. 리본은 반복 단어 장식이며 실제 정보는 아래 문단에 표시 */
+.study {
+    padding: 80px 5% 110px;
+    background-color: #090e0a;
+}
+
+.study-heading {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.study-heading h2 {
+    font-family: "Anton", Impact, sans-serif;
+    font-size: 120px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.study-heading p {
+    margin-top: 24px;
+    font-size: 18px;
+}
+
+.study-row {
+    display: flex;
+    align-items: center;
+    gap: 6%;
+    margin-bottom: 72px;
+    min-height: 300px;
+}
+
+.study-row:last-child {
+    margin-bottom: 0;
+}
+
+.study-photo {
+    width: 240px;
+    flex-shrink: 0;
+}
+
+.study-photo img {
+    height: 240px;
+    object-fit: cover;
+    border: 3px solid #174552;
+    border-radius: 50%;
+    transition: transform 0.4s ease;
+}
+
+.study-photo:hover img {
+    transform: scale(1.03);
+}
+
+.emerald .study-photo img { border-color: #005c43; }
+.purple .study-photo img { border-color: #605786; }
+.ivory .study-photo img { border-color: #e3e4d8; }
+.crimson .study-photo img { border-color: #b20d32; }
+
+.study-photo p {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.study-copy {
+    flex: 1;
+    min-width: 0; /* 긴 리본 글자가 flex 영역을 밀어내지 않도록 처리 */
+}
+
+.study-copy h3 {
+    margin-bottom: 16px;
+    font-family: "Lora", Georgia, serif;
+    font-size: 34px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.ribbon {
+    overflow: hidden; /* 리본 상자 밖의 반복 영문만 가림 */
+    background-color: #174552;
+}
+
+.ribbon span {
+    display: block;
+    font-family: "Anton", Impact, sans-serif;
+    font-size: 100px;
+    line-height: 1.35;
+    white-space: nowrap;
+}
+
+.emerald .ribbon { background-color: #005c43; }
+.purple .ribbon { background-color: #605786; }
+.ivory .ribbon { background-color: #e3e4d8; color: #090e0a; }
+.crimson .ribbon { background-color: #b20d32; }
+
+.study-copy p {
+    margin-top: 16px;
+    font-size: 18px;
+}
+
+/* [08] 다섯 대표색. border-radius: 50%로 정사각형을 원형으로 만듭니다. */
+.color-index {
+    padding: 72px 5% 80px;
+    background-color: #090e0a;
+}
+
+.color-index h2 {
+    font-family: "Lora", Georgia, serif;
+    font-size: 60px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.color-index > p {
+    margin-top: 32px;
+    font-size: 16px;
+}
+
+.index-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 38px;
+}
+
+.index-item {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+}
+
+.color-circle {
+    width: 168px;
+    height: 168px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    background-color: #174552;
+    transition: transform 0.4s ease, box-shadow 0.4s;
+}
+
+.index-item:hover .color-circle {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.emerald .color-circle { background-color: #005c43; }
+.purple .color-circle { background-color: #605786; }
+.ivory .color-circle { background-color: #e3e4d8; }
+.crimson .color-circle { background-color: #b20d32; }
+
+.index-item h3 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.index-item p {
+    margin-top: 12px;
+    font-family: "Cousine", monospace;
+    font-size: 12px;
+}
+
+.color-index .index-note {
+    margin-top: 80px;
+    font-size: 14px;
+}
+
+/* [09] 푸터. 고정 높이를 쓰지 않아 출처 문장이 잘리지 않게 구성 */
+footer {
+    padding: 48px 6% 32px;
+    background-color: #b20d32;
+}
+
+footer h2 {
+    font-size: 63px;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -3px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-links a {
+    padding: 15px 24px;
+    border-radius: 100px;
+    background-color: #090e0a;
+    font-size: 14px;
+    transition: background-color 0.2s, color 0.2s, transform 0.3s;
+}
+
+.footer-links a:hover {
+    background-color: #f2eee4;
+    color: #101310;
+    transform: translateY(-3px);
+}
+
+/* [12] 추가 애니메이션
+   :hover / transition은 확인한 수업 자료에 나온 문법입니다.
+   아래 @keyframes / animation은 해당 자료에서 직접 확인하지 못한 추가 문법입니다.
+   JavaScript 없이 시작·끝 상태와 재생 시간을 CSS로 지정합니다. */
+
+/* opacity: 투명도, translateY: 위아래 이동. 제목 3줄이 차례로 나타남.
+   backwards는 지연 시간에도 첫 상태를 적용하며, 재생 뒤에는 원래 상태로 돌아옵니다. */
+.cover-the, .cover-film, .cover-color {
+    animation: title-appear 0.9s ease-out backwards;
+}
+
+.cover-film { animation-delay: 0.15s; }
+.cover-color { animation-delay: 0.3s; }
+
+@keyframes title-appear {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 동일한 단어 묶음 2개를 이어 놓고 정확히 절반만 이동하면 끊김 없이 반복됩니다.
+   max-content는 글자 전체 너비를 유지하는 보조 문법입니다.
+   linear: 일정한 속도 / infinite: 계속 반복 */
+.ribbon-track {
+    display: flex;
+    width: max-content;
+    animation: ribbon-flow 30s linear infinite;
+}
+
+.ribbon-track span {
+    flex-shrink: 0;
+    padding-right: 64px;
+}
+
+/* 단어를 자세히 읽을 수 있도록 리본 위에 마우스를 올리면 잠시 정지 */
+.ribbon:hover .ribbon-track {
+    animation-play-state: paused;
+}
+
+@keyframes ribbon-flow {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* 숫자 소개 링크의 화살표도 작은 거리만 이동 */
+.number-row strong span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+a.number-row:hover strong span, a.number-row:focus-visible strong span {
+    transform: translate(4px, -4px);
+}
+
+/* 운영체제에서 움직임 줄이기를 선택한 경우 자동 재생과 움직임을 해제합니다.
+   일반 화면 너비를 검사하는 @media와 같은 형태로 사용자 설정을 검사하는 보조 문법입니다. */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .cover-the, .cover-film, .cover-color, .ribbon-track { animation: none; }
+    .scene-image img, .film-label, .study-photo img, .color-circle,
+    .footer-links a, .number-row strong span { transition: none; }
+    .scene:hover .scene-image img, .film-label:hover, .study-photo:hover img,
+    .index-item:hover .color-circle, .footer-links a:hover,
+    a.number-row:hover strong span, a.number-row:focus-visible strong span { transform: none; }
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #f2eee4;
+    font-size: 12px;
+}
+
+.footer-info p {
+    max-width: 350px;
+    font-size: 11px;
+}
+
+/* [10] 태블릿. 수업 예시와 동일하게 @media 안에서 필요한 값만 덮어씁니다. */
+@media (min-width: 768px) and (max-width: 1023px) {
+    header nav { gap: 16px; }
+    .cover-film { font-size: 76px; }
+    .cover h1 { font-size: 70px; }
+    .archive-column { width: 45%; }
+    .scene-image { height: 300px; }
+    .scene-image h3 { font-size: 38px; }
+    .film-label { padding: 12px; gap: 10px; }
+    .note-number { font-size: 8px; }
+    .study-heading h2 { font-size: 80px; }
+    .study-photo { width: 175px; }
+    .study-photo img { height: 175px; }
+    .study-copy h3 { font-size: 28px; }
+    .study-copy p { font-size: 16px; }
+    .ribbon span { font-size: 76px; }
+    .index-list { gap: 16px; }
+    .color-circle { width: 115px; height: 115px; }
+}
+
+/* [11] 모바일. 2열을 1열로 바꾸고 글자와 여백을 축소합니다.
+   왼쪽 열의 장면이 먼저 나오고 오른쪽 열의 장면이 이어집니다. */
+@media (max-width: 767px) {
+    header { display: block; min-height: 0; padding: 20px 6%; }
+    header nav { margin-top: 16px; gap: 16px; flex-wrap: wrap; }
+    header nav a { font-size: 11px; }
+    .cover { height: auto; min-height: 560px; padding: 30px 6%; }
+    .cover-intro { display: block; }
+    .cover-intro p { font-size: 12px; }
+    .cover-intro p + p { margin-top: 16px; }
+    .cover h1 { margin-top: 65px; font-size: 52px; letter-spacing: -2px; }
+    .cover-film { margin: 18px 0; font-size: 37px; letter-spacing: -2px; }
+    .cover-caption { margin-top: 45px; font-size: 9px; }
+    .about { padding: 55px 6%; }
+    .about h2 { font-size: 34px; }
+    .number-row { min-height: 110px; gap: 10px; }
+    .number-row h3 { width: 30%; font-size: 12px; }
+    .number-row strong { font-size: 48px; letter-spacing: -3px; }
+    .number-row strong span { font-size: 18px; margin-left: 4px; }
+    .number-row img { width: 70px; height: 48px; }
+    .archive { padding: 70px 6%; }
+    .section-heading { display: block; }
+    .archive h2 { font-size: 46px; }
+    .archive-guide { margin-top: 28px; }
+    .archive-guide p { font-size: 13px; }
+    .archive-grid { display: block; }
+    .archive-column { width: 100%; }
+    .right-column { padding-top: 0; margin-top: 55px; }
+    .archive-word { display: none; }
+    .scene { margin-bottom: 55px; }
+    .scene-image { height: 300px; }
+    .scene-image h3 { font-size: 40px; }
+    .film-label { padding: 12px; gap: 12px; }
+    .note-number { font-size: 8px; }
+    .scene-note { min-height: 0; font-size: 14px; }
+    .study { padding: 60px 6%; }
+    .study-heading { margin-bottom: 60px; }
+    .study-heading h2 { font-size: 44px; }
+    .study-heading p { font-size: 16px; }
+    .study-row { display: block; margin-bottom: 65px; }
+    .study-photo { width: 100%; margin-bottom: 24px; }
+    .study-photo img { width: 180px; height: 180px; margin: 0 auto; }
+    .study-copy h3 { font-size: 25px; }
+    .ribbon span { font-size: 68px; }
+    .study-copy p { font-size: 15px; }
+    .color-index { padding: 50px 6% 65px; }
+    .color-index h2 { font-size: 35px; letter-spacing: -1px; }
+    .color-index > p { font-size: 14px; }
+    .index-list { flex-wrap: wrap; justify-content: flex-start; gap: 30px 4%; }
+    .index-item { flex: none; width: 48%; }
+    .color-circle { width: 120px; height: 120px; }
+    .color-index .index-note { margin-top: 45px; font-size: 12px; }
+    footer { padding: 40px 6% 28px; }
+    footer h2 { font-size: 38px; letter-spacing: -2px; }
+    .footer-links { justify-content: flex-start; flex-wrap: wrap; gap: 10px; margin: 30px 0; }
+    .footer-links a { padding: 12px 16px; font-size: 11px; }
+    .footer-info { display: block; }
+    .footer-info p { margin-top: 20px; }
+}

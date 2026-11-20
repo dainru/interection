@@ -1,14 +1,317 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ko">
 <head>
+    <!-- [01] 한글 표시와 모바일 화면 너비 설정 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CHROMA — The Handmaiden Color Archive</title>
+    <!-- [02] 수업 예시처럼 웹 폰트와 별도 CSS 파일 연결. 인터넷 연결 시 폰트 적용 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cousine&family=DM+Sans:wght@400;500;700;900&family=Lora:ital,wght@1,400&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
 </head>
+<body id="top">
+    <!-- [03] header와 nav. #이름은 같은 페이지의 id 위치로 이동하는 링크 -->
+    <header>
+        <a class="logo" href="#top">CHROMA</a>
+        <nav aria-label="주 메뉴">
+            <a href="#about">ABOUT</a>
+            <a href="#scenes">SCENES</a>
+            <a href="#study">COLOR STUDY</a>
+            <a href="#color-index">COLOR INDEX</a>
+        </nav>
+    </header>
+    <main>
+        <!-- [04] 표지. 사진은 CSS의 background-image로 지정 -->
+        <section class="cover">
+            <div class="cover-intro">
+                <p>아가씨 · 2016 · 박찬욱 감독</p>
+                <p>의상과 공간, 빛에 담긴 색.<br>익숙한 장면을 다른 시선으로 바라봅니다.</p>
+            </div>
+            <h1>
+                <span class="cover-the">THE</span>
+                <span class="cover-film">HANDMAIDEN</span>
+                <span class="cover-color">IN <strong>COLOR.</strong></span>
+            </h1>
+            <p class="cover-caption">THE HANDMAIDEN<br>A PERSONAL COLOR ARCHIVE</p>
+        </section>
 
-<body>
-    상명대학교
+        <!-- [05] 숫자 소개. flex로 제목·숫자·썸네일을 가로 배치 -->
+        <section class="about" id="about">
+            <div class="section-heading">
+                <h2>THE FILM,<br>IN NUMBERS.</h2>
+            </div>
+            <div class="number-row">
+                <h3>개봉 연도</h3><strong>2016</strong>
+                <img src="images/teal.jpg" alt="침실 장면">
+            </div>
+            <a class="number-row" href="#scenes">
+                <h3>탐색할 장면</h3><strong>06<span>↗</span></strong>
+                <img src="images/emerald.jpg" alt="녹색 드레스 장면">
+            </a>
+            <a class="number-row" href="#study">
+                <h3>색을 읽는 관점</h3><strong>05<span>↗</span></strong>
+                <img src="images/ivory.jpg" alt="밝은 복도 장면">
+            </a>
+        </section>
+
+        <!-- [06] 피그마의 엇갈린 2열 배치. 두 열을 flex로 나누고 오른쪽에 여백 추가 -->
+        <section class="archive" id="scenes">
+            <div class="section-heading">
+                <h2>SCENES<br>IN COLOR.</h2>
+                <div class="archive-guide">
+                    <span>06 SCENES / COLOR NOTES</span>
+                    <p>장면 아래의 색상과 해석을 함께 읽어보세요.</p>
+                </div>
+            </div>
+            <div class="archive-grid">
+                <!-- 장식 글자는 읽기 순서에 포함하지 않음 -->
+                <span class="archive-word" aria-hidden="true">COLORS OF THE HANDMAIDEN</span>
+                <div class="archive-column">
+                <!-- 같은 카드 구조를 반복하고 색상 클래스와 내용만 변경 -->
+                <article class="scene teal" id="scene-teal">
+                    <div class="scene-image">
+                        <img src="images/teal.jpg" alt="청록색 침구와 따뜻한 조명이 있는 침실">
+                        <h3>STILL<br>IN<br>TEAL.</h3>
+                    </div>
+                    <!-- 필름 라벨: 펼치기 버튼이 아닌 색상 정보 영역. 설명은 항상 표시 -->
+                    <div class="film-label">
+                        <span class="swatch" aria-hidden="true"></span>
+                        <div class="color-name">
+                            <h4>TEAL</h4>
+                            <span>#174552</span>
+                        </div>
+                        <span class="note-number">COLOR NOTE / 01</span>
+                    </div>
+                    <p class="scene-note">침구와 의상을 잇는 청록. 넓은 어둠 속에서 서늘하고 고요한 인상을 만듭니다.</p>
+                </article>
+                <!-- 같은 카드 구조를 반복하고 색상 클래스와 내용만 변경 -->
+                <article class="scene purple" id="scene-purple">
+                    <div class="scene-image">
+                        <img src="images/purple.png" alt="정원을 배경으로 보라색 의상을 입은 인물">
+                        <h3>PURPLE<br>IN FOCUS.</h3>
+                    </div>
+                    <!-- 필름 라벨: 펼치기 버튼이 아닌 색상 정보 영역. 설명은 항상 표시 -->
+                    <div class="film-label">
+                        <span class="swatch" aria-hidden="true"></span>
+                        <div class="color-name">
+                            <h4>PURPLE</h4>
+                            <span>#605786</span>
+                        </div>
+                        <span class="note-number">COLOR NOTE / 03</span>
+                    </div>
+                    <p class="scene-note">보랏빛 의상과 정원의 녹색이 구별됩니다. 차가운 색의 조합을 차분하고 낯선 분위기로 읽을 수 있습니다.</p>
+                </article>
+                <!-- 같은 카드 구조를 반복하고 색상 클래스와 내용만 변경 -->
+                <article class="scene crimson" id="scene-crimson">
+                    <div class="scene-image">
+                        <img src="images/crimson.png" alt="진홍색 의상과 어두운 목재 바닥을 위에서 본 장면">
+                        <h3>CRIMSON<br>CONTRAST.</h3>
+                    </div>
+                    <!-- 필름 라벨: 펼치기 버튼이 아닌 색상 정보 영역. 설명은 항상 표시 -->
+                    <div class="film-label">
+                        <span class="swatch" aria-hidden="true"></span>
+                        <div class="color-name">
+                            <h4>CRIMSON</h4>
+                            <span>#B20D32</span>
+                        </div>
+                        <span class="note-number">COLOR NOTE / 05</span>
+                    </div>
+                    <p class="scene-note">선명한 진홍색 의상은 어두운 목재와 강한 대비를 이룹니다. 이 색의 집중을 장면의 시각적 긴장으로 해석했습니다.</p>
+                </article>
+                </div>
+                <div class="archive-column right-column">
+                <!-- 같은 카드 구조를 반복하고 색상 클래스와 내용만 변경 -->
+                <article class="scene emerald" id="scene-emerald">
+                    <div class="scene-image">
+                        <img src="images/emerald.jpg" alt="어두운 실내에서 녹색 드레스를 입은 인물">
+                        <h3>EMERALD<br>IN<br>FOCUS.</h3>
+                    </div>
+                    <!-- 필름 라벨: 펼치기 버튼이 아닌 색상 정보 영역. 설명은 항상 표시 -->
+                    <div class="film-label">
+                        <span class="swatch" aria-hidden="true"></span>
+                        <div class="color-name">
+                            <h4>EMERALD</h4>
+                            <span>#005C43</span>
+                        </div>
+                        <span class="note-number">COLOR NOTE / 02</span>
+                    </div>
+                    <p class="scene-note">절제된 주변색 사이에서 녹색 드레스가 두드러지며 인물에게 시선을 모읍니다.</p>
+                </article>
+                <!-- 같은 카드 구조를 반복하고 색상 클래스와 내용만 변경 -->
+                <article class="scene ivory" id="scene-ivory">
+                    <div class="scene-image">
+                        <img src="images/ivory.jpg" alt="복도에서 남색 의상과 아이보리 앞치마를 입은 인물">
+                        <h3>LIGHT<br>IN<br>IVORY.</h3>
+                    </div>
+                    <!-- 필름 라벨: 펼치기 버튼이 아닌 색상 정보 영역. 설명은 항상 표시 -->
+                    <div class="film-label">
+                        <span class="swatch" aria-hidden="true"></span>
+                        <div class="color-name">
+                            <h4>IVORY</h4>
+                            <span>#E3E4D8</span>
+                        </div>
+                        <span class="note-number">COLOR NOTE / 04</span>
+                    </div>
+                    <p class="scene-note">앞치마와 창가의 아이보리. 어두운 남색 의상 옆에서 빛과 실루엣을 드러냅니다.</p>
+                </article>
+                <!-- 같은 카드 구조를 반복하고 색상 클래스와 내용만 변경 -->
+                <article class="scene coral" id="scene-coral">
+                    <div class="scene-image">
+                        <img src="images/coral.png" alt="산호색 의상을 입은 인물과 주변의 녹색 배경">
+                        <h3>SOFT<br>IN<br>RED.</h3>
+                    </div>
+                    <!-- 필름 라벨: 펼치기 버튼이 아닌 색상 정보 영역. 설명은 항상 표시 -->
+                    <div class="film-label">
+                        <span class="swatch" aria-hidden="true"></span>
+                        <div class="color-name">
+                            <h4>CORAL</h4>
+                            <span>#DA6C56</span>
+                        </div>
+                        <span class="note-number">COLOR NOTE / 06</span>
+                    </div>
+                    <p class="scene-note">같은 빨강 계열도 산호빛으로 옅어지면 부드럽게 읽힙니다. 주변의 녹색과 피부색이 인상을 함께 바꿉니다.</p>
+                </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- [07] 색 분석. 원형 사진과 텍스트 영역을 flex로 나란히 배치 -->
+        <section class="study" id="study">
+            <div class="study-heading">
+                <h2>READ THE COLORS.</h2>
+                <p>색을 보고, 관계를 읽다.</p>
+            </div>
+            <article class="study-row teal">
+                <div class="study-photo">
+                    <img src="images/teal.jpg" alt="TEAL · #174552 분석에 사용한 장면">
+                    <p>TEAL · #174552</p>
+                </div>
+                <div class="study-copy">
+                    <h3>Color Temperature</h3>
+                    <!-- 반복 영문은 시각 장식. 실제 해석은 아래 문단에 표시 -->
+                    <div class="ribbon" aria-hidden="true">
+                        <div class="ribbon-track">
+                            <span> COOL  COOL  COOL  COOL  COOL </span>
+                            <span> COOL  COOL  COOL  COOL  COOL </span>
+                        </div>
+                    </div>
+                    <p>침실을 채우는 청록.<br>따뜻한 조명과 대비되며 서늘하고 고요한 분위기를 만듭니다.</p>
+                </div>
+            </article>
+            <article class="study-row emerald">
+                <div class="study-photo">
+                    <img src="images/emerald-study.png" alt="EMERALD · #005C43 분석에 사용한 장면">
+                    <p>EMERALD · #005C43</p>
+                </div>
+                <div class="study-copy">
+                    <h3>Saturation</h3>
+                    <!-- 반복 영문은 시각 장식. 실제 해석은 아래 문단에 표시 -->
+                    <div class="ribbon" aria-hidden="true">
+                        <div class="ribbon-track">
+                            <span> VIVID  VIVID  VIVID  VIVID  VIVID </span>
+                            <span> VIVID  VIVID  VIVID  VIVID  VIVID </span>
+                        </div>
+                    </div>
+                    <p>어둠 속에서 선명해지는 녹색.<br>절제된 주변색 사이에서 의상의 채도가 인물에게 시선을 모읍니다.</p>
+                </div>
+            </article>
+            <article class="study-row purple">
+                <div class="study-photo">
+                    <img src="images/purple.png" alt="PURPLE · #605786 분석에 사용한 장면">
+                    <p>PURPLE · #605786</p>
+                </div>
+                <div class="study-copy">
+                    <h3>Purple &amp; Atmosphere</h3>
+                    <!-- 반복 영문은 시각 장식. 실제 해석은 아래 문단에 표시 -->
+                    <div class="ribbon" aria-hidden="true">
+                        <div class="ribbon-track">
+                            <span> MYSTERY  MYSTERY  MYSTERY  MYSTERY  MYSTERY </span>
+                            <span> MYSTERY  MYSTERY  MYSTERY  MYSTERY  MYSTERY </span>
+                        </div>
+                    </div>
+                    <p>보랏빛 의상이 만드는 차가운 거리감.<br>정원의 녹색 배경과 구별되며 인물의 차분하고 낯선 인상을 강조합니다.</p>
+                </div>
+            </article>
+            <article class="study-row ivory">
+                <div class="study-photo">
+                    <img src="images/ivory-study.png" alt="IVORY · #E3E4D8 분석에 사용한 장면">
+                    <p>IVORY · #E3E4D8</p>
+                </div>
+                <div class="study-copy">
+                    <h3>Light &amp; Shadow</h3>
+                    <!-- 반복 영문은 시각 장식. 실제 해석은 아래 문단에 표시 -->
+                    <div class="ribbon" aria-hidden="true">
+                        <div class="ribbon-track">
+                            <span> LIGHT  LIGHT  LIGHT  LIGHT  LIGHT </span>
+                            <span> LIGHT  LIGHT  LIGHT  LIGHT  LIGHT </span>
+                        </div>
+                    </div>
+                    <p>밝은 복도와 아이보리 앞치마.<br>남색 의상과의 명도 차이로 빛과 실루엣이 드러납니다.</p>
+                </div>
+            </article>
+            <article class="study-row crimson">
+                <div class="study-photo">
+                    <img src="images/coral.png" alt="RED · #B20D32 분석에 사용한 장면">
+                    <p>RED · #B20D32</p>
+                </div>
+                <div class="study-copy">
+                    <h3>Red &amp; Emotional Contrast</h3>
+                    <!-- 반복 영문은 시각 장식. 실제 해석은 아래 문단에 표시 -->
+                    <div class="ribbon" aria-hidden="true">
+                        <div class="ribbon-track">
+                            <span> TENSION  TENSION  TENSION  TENSION  TENSION </span>
+                            <span> TENSION  TENSION  TENSION  TENSION  TENSION </span>
+                        </div>
+                    </div>
+                    <p>선명한 진홍색은 어두운 목재와 대비되어 시각적 긴장을 만듭니다.<br>산호빛 빨강은 더 부드럽게 읽힙니다. 감정의 의미는 장면에 대한 개인 해석입니다.</p>
+                </div>
+            </article>
+        </section>
+
+        <!-- [08] 대표색. 같은 구조를 다섯 번 반복 -->
+        <section class="color-index" id="color-index">
+            <h2>FIVE SIGNATURES.</h2>
+            <p>다섯 가지 대표색. 빨강은 진홍색을 기준으로 두 장면의 차이를 비교합니다.</p>
+            <div class="index-list">
+                <div class="index-item teal">
+                    <div class="color-circle" aria-hidden="true"></div>
+                    <h3>TEAL</h3><p>#174552</p>
+                </div>
+                <div class="index-item emerald">
+                    <div class="color-circle" aria-hidden="true"></div>
+                    <h3>EMERALD</h3><p>#005C43</p>
+                </div>
+                <div class="index-item purple">
+                    <div class="color-circle" aria-hidden="true"></div>
+                    <h3>PURPLE</h3><p>#605786</p>
+                </div>
+                <div class="index-item ivory">
+                    <div class="color-circle" aria-hidden="true"></div>
+                    <h3>IVORY</h3><p>#E3E4D8</p>
+                </div>
+                <div class="index-item crimson">
+                    <div class="color-circle" aria-hidden="true"></div>
+                    <h3>RED</h3><p>#B20D32</p>
+                </div>
+            </div>
+            <p class="index-note">색상 코드는 제공 사진을 보고 선택한 근사값입니다.</p>
+        </section>
+    </main>
+
+    <!-- [09] 푸터. a 태그를 둥근 버튼처럼 꾸미고 페이지 내부로 이동 -->
+    <footer>
+        <h2>SCENES FADE.<br>COLORS REMAIN.</h2>
+        <nav class="footer-links" aria-label="다시 탐색하기">
+            <a href="#top">BACK TO TOP　↑</a>
+            <a href="#scenes">SCENES　↗</a>
+            <a href="#study">COLOR STUDY　↗</a>
+        </nav>
+        <div class="footer-info">
+            <span>CHROMA · THE HANDMAIDEN</span>
+            <p>이미지: 사용자 제공 〈아가씨〉 스틸컷 · 권리: 해당 권리자<br>교육 과제용 개인 컬러 아카이브 · 팔레트 및 해석: 개인 관찰</p>
+        </div>
+    </footer>
 </body>
-
 </html>
